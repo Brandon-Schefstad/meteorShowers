@@ -12,7 +12,9 @@ app.use(cors());
 require('dotenv').config();
 const MongoClient = require('mongodb').MongoClient;
 let db,
-	dbName = 'meteor-showers';
+	dbConnectionStr = `mongodb+srv://herokulogin:DQjmKN5PMzpUJW3@cluster0.jbffj5r.mongodb.net/?retryWrites=true&w=majority`;
+dbName = 'meteor-showers';
+console.log(dbConnectionStr);
 MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }).then(
 	(client) => {
 		console.log(`Connected to ${dbName} Database`);
