@@ -1,14 +1,49 @@
 const { request } = require('express');
 const express = require('express');
+require('dotenv').config();
 const app = express();
+// app.set('view engine', 'ejs');
+app.use(express.static('views'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 const PORT = 8000;
 const cors = require('cors');
-
 app.use(cors());
-// const showers = require('./showers');
-
+require('dotenv').config();
+const MongoClient = require('mongodb').MongoClient;
+let db,
+	dbConnectionStr = `mongodb+srv://${process.env.name}:${process.env.password}@cluster0.jbffj5r.mongodb.net/?retryWrites=true&w=majority`;
+dbName = 'meteor-showers';
+console.log(dbConnectionStr);
+MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }).then(
+	(client) => {
+		console.log(`Connected to ${dbName} Database`);
+		db = client.db(dbName);
+	}
+);
 app.get('/', (request, response) => {
-	response.sendFile(__dirname + '/index.html');
+	db.collection('meteor-showers')
+		.find()
+		.toArray()
+		.then((data) => {
+			response.render('index.html');
+		});
+});
+app.get('/dev', (request, response) => {
+	db.collection('meteor-showers')
+		.find()
+		.toArray()
+		.then((data) => {
+			response.render('index.ejs', { info: data });
+		});
+});
+app.get('/api', (request, response) => {
+	db.collection('meteor-showers')
+		.find()
+		.toArray()
+		.then((data) => {
+			response.json(data);
+		});
 });
 
 app.get('/api/:name', (request, response) => {
@@ -26,69 +61,26 @@ app.listen(process.env.PORT || PORT, () => {
 	console.log(`Server running on port ${PORT}`);
 });
 
-app.get('/api', (request, response) => {
-	response.json(showers);
+app.post('/addShower', (request, response) => {
+	db.collection('meteor-showers')
+		.insertOne({
+			name: request.body.name,
+			startDate: request.body.startDate,
+			endDate: request.body.endDate,
+			peakDate: request.body.peakDate,
+			startMonthInt: request.body.startMonthInt,
+			startDayInt: request.body.startDayInt,
+			endMonthInt: request.body.endMonthInt,
+			endDayInt: request.body.endDayInt,
+			peakMonthInt: request.body.peakMonthInt,
+			peakDayInt: request.body.peakDayInt,
+			speed: request.body.speed,
+			zhr: request.body.zhr,
+			rating: request.body.rating,
+			parentBody: request.body.parentBody,
+		})
+		.then((result) => {
+			console.log('Shower Added');
+			response.redirect('/');
+		});
 });
-
-const showers = {
-	quadrantids: {
-		name: 'Quadrantids',
-		startDate: 'December 28',
-		endDate: 'January 12',
-		peakDate: 'January 3',
-		startMonthInt: 12,
-		startDayInt: 28,
-		endMonthInt: 1,
-		endDayInt: 12,
-		peakMonthInt: 1,
-		peakDayInt: 3,
-		speed: 41,
-		zhr: 110,
-		rating: 'bright',
-		parentBody: '(196256) 2003 EH1',
-	},
-	'alpha centaurids': {
-		name: 'Alpha Centaurids',
-		startDate: 'January 31',
-		endDate: 'February 20',
-		peakDate: 'February 8',
-		startMonthInt: 1,
-		startDayInt: 31,
-		endMonthInt: 2,
-		endDayInt: 20,
-		peakMonthInt: 2,
-		peakDayInt: 8,
-		speed: 58,
-		zhr: 6,
-		rating: 'bright',
-		parentBody: 'undiscovered',
-	},
-	'gamma normids': {
-		startDate: 'February 25',
-		endDate: 'March 28',
-		peakDate: 'March 14',
-		startMonthInt: 2,
-		startDayInt: 25,
-		endMonthInt: 3,
-		endDayInt: 28,
-		peakMonthInt: 3,
-		peakDayInt: 14,
-		speed: 56,
-		zhr: 6,
-		rating: 'nrogjt',
-		parentBody: 'C/1864 R1 (Donati) or C/1893 U1 (Brooks) ',
-	},
-	template: {
-		startDate: null,
-		endDate: null,
-		peakDate: null,
-		startMonthInt: null,
-		startDayInt: null,
-		endMonthInt: null,
-		endDayInt: null,
-		speed: null,
-		zhr: null,
-		rating: null,
-		parentBody: null,
-	},
-};

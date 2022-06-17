@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Meteor Showers</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<h1>Meteor Showers</h1>
+
+		<% for (let i=0; i< info.length;i++){%>
+		<div class="shower__card">
+			<span><%=info[i].name %></span>
+			<div class="shower__dates">
+				<span><%=info[i].startDate %></span>
+				<span><%=info[i].endDate %></span>
+			</div>
+			<div class="shower__info">
+				<span><%=info[i].peakDate %></span>
+				<span><%=info[i].speed %></span>
+				<span><%=info[i].zhr %></span>
+				<span><%=info[i].rating %></span>
+				<span><%=info[i].parentBody %></span>
+			</div>
+		</div>
+		<% }%>
+
+		<!-- <div class="input__container"> -->
+
+		<form class="input__container" action="/addShower" method="POST">
+			<input type="text" placeholder="Name" name="name" />
+			<input
+				type="text"
+				placeholder="Start Date (e.g. 'March 1st')"
+				name="startDate"
+				class="grid-row2"
+			/>
+			<input
+				type="text"
+				placeholder="End Date (e.g. 'March 21st')"
+				name="endDate"
+				class="grid-row2"
+			/>
+			<input
+				type="text"
+				placeholder="Peak Date (e.g. 'March 8th')"
+				name="peakDate"
+				class="grid-row2"
+			/>
+
+			<input
+				type="text"
+				class="grid-row3"
+				placeholder="Start Month Integer (e.g. 3)"
+				name="startMonthInt"
+			/>
+
+			<input
+				type="text"
+				placeholder="Start Day Integer (e.g. 1)"
+				name="startDayInt"
+				class="grid-row3"
+			/>
+
+			<input
+				type="text"
+				placeholder="End Month Integer (e.g. 3)"
+				name="endMonthInt"
+				class="grid-row4"
+			/>
+			<input
+				type="text"
+				placeholder="End Day Integer (e.g. 28)"
+				name="endDayInt"
+				class="grid-row4"
+			/>
+
+			<input
+				type="text"
+				placeholder="Peak Month Integer (e.g. 28)"
+				name="peakMonthInt"
+				class="grid-row5"
+			/>
+			<input
+				type="text"
+				placeholder="Peak Day Integer (e.g. 28)"
+				name="peakDayInt"
+				class="grid-row5"
+			/>
+
+			<input
+				type="text"
+				placeholder="Speed (km/h)"
+				name="speed"
+				class="grid-row6"
+			/>
+			<input type="text" placeholder="ZHR" name="zhr" class="grid-row6" />
+			<input
+				type="text"
+				placeholder="Rating"
+				name="rating"
+				class="grid-row6"
+			/>
+			<input
+				type="text"
+				placeholder="Parent Body"
+				name="parentBody"
+				class="grid-row6"
+			/>
+			<input type="submit" class="span2 grid-row7" />
+			<!-- </div> -->
+		</form>
+	</body>
+</html>
