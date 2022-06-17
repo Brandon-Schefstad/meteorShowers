@@ -14,6 +14,7 @@ body {
 	border-radius: 2rem;
 	margin: auto;
 	text-align: left;
+	margin-bottom: 2rem;
 }
 .column1 {
 	grid-column: 1 / span 2;
