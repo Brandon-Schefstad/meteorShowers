@@ -81,6 +81,6 @@ app.post('/addShower', (request, response) => {
 		})
 		.then((result) => {
 			console.log('Shower Added');
-			response.redirect('/');
+			response.redirect('/dev');
 		});
 });
