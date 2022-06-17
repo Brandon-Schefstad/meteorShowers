@@ -40,7 +40,9 @@ app.get('/dev', (request, response) => {
 app.get('/api', (request, response) => {
 	db.collection('meteor-showers')
 		.find()
+		.toArray()
 		.then((data) => {
+			console.log(data);
 			response.json(data);
 		});
 });
