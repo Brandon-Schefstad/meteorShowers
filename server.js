@@ -19,7 +19,7 @@ app.get('/api/:name', (request, response) => {
 		response.json(showers['template']);
 	}
 });
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
 	console.log(`Server running on port ${PORT}`);
 });
 
