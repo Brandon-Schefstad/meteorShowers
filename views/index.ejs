@@ -6,26 +6,33 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Meteor Showers</title>
 		<link rel="stylesheet" href="style.css" />
+		<script
+			src="https://kit.fontawesome.com/a0bcd08329.js"
+			crossorigin="anonymous"
+		></script>
 	</head>
 	<body>
 		<h1>Meteor Showers</h1>
 
-		<% for (let i=0; i< info.length;i++){%>
-		<div class="shower__card">
-			<span><%=info[i].name %></span>
-			<div class="shower__dates">
-				<span><%=info[i].startDate %></span>
-				<span><%=info[i].endDate %></span>
+		<section class="display">
+			<% for (let i=0; i< info.length;i++){%>
+			<div class="shower__card">
+				<span class="shower_name"><%=info[i].name %></span>
+				<div class="shower__dates">
+					<span>Start Date: <%=info[i].startDate %>, 2022</span>
+					<span>End Date: <%=info[i].endDate %>, 2022</span>
+				</div>
+				<div class="shower__info">
+					<span>Peak: <%=info[i].peakDate %>, 2022</span>
+					<span>Speed <%=info[i].speed %>km/s</span>
+					<span>Zenith Hourly Rate: <%=info[i].zhr %></span>
+					<span>Brightness: <%=info[i].rating %></span>
+					<span>Parent Body: <%=info[i].parentBody %></span>
+				</div>
+				<i class="fa-solid fa-circle-minus"></i>
 			</div>
-			<div class="shower__info">
-				<span><%=info[i].peakDate %></span>
-				<span><%=info[i].speed %></span>
-				<span><%=info[i].zhr %></span>
-				<span><%=info[i].rating %></span>
-				<span><%=info[i].parentBody %></span>
-			</div>
-		</div>
-		<% }%>
+			<% }%>
+		</section>
 
 		<!-- <div class="input__container"> -->
 
