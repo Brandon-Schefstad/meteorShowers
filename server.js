@@ -22,12 +22,7 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }).then(
 	}
 );
 app.get('/', (request, response) => {
-	db.collection('meteor-showers')
-		.find()
-		.toArray()
-		.then((data) => {
-			response.render('index.html');
-		});
+	response.render('index.html');
 });
 app.get('/dev', (request, response) => {
 	db.collection('meteor-showers')

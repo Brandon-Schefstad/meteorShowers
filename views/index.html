@@ -5,14 +5,25 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Meteor Showers JSON</title>
+		<link rel="stylesheet" href="clientstyle.css">
 	</head>
 	<body>
 		<h1>METEOR SHOWER API</h1>
 		<p>
-			Please use
+			Please use the endpoint:
 			<a href="https://meteor-shower-api.herokuapp.com/api"
 				>https://meteor-shower-api.herokuapp.com/api</a
 			>
+
+			<p>
+				API Returns an array of objects with the following schema: <div class="schema">
+					<span class="column1">Object{</span>
+						<span class="column2">_id,</span> 
+					<span class="column2">name,</span> <span class="column2">startDate,</span> <span class="column2">endDate,</span> <span class="column2">peakDate,</span> <span class="column2">startMonthInt,</span><span class="column2">startDayInt, </span>
+					<span class="column2">endMonthInt,</span><span class="column2">endDayInt,</span>  <span class="column2">peakMonthInt,</span><span class="column2">peakDayInt,</span>  <span class="column2">speed,</span> <span class="column2">zhr,</span>
+					<span class="column2">rating,</span><span class="column2">parentBody,</span> <span class="column1"> }</span>
+				</div>
+			</p>
 		</p>
 	</body>
 </html>
