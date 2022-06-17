@@ -42,7 +42,6 @@ app.get('/api', (request, response) => {
 		.find()
 		.toArray()
 		.then((data) => {
-			console.log(data);
 			response.json(data);
 		});
 });
