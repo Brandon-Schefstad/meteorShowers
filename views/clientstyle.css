@@ -4,15 +4,16 @@ body {
 .schemas {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	padding-inline: 5rem;
 }
 .schema {
 	display: grid;
-	grid-template-columns: 15% 15%;
+	grid-template-columns: 15% 85%;
 	background: #5f5f5f;
 	width: 50%;
-	font-size: 1.5rem;
-	padding-inline-start: 6rem;
-	padding-inline-end: 0rem;
+	font-size: 1.4rem;
+	padding-inline-start: 4rem;
+	padding-inline-end: 2rem;
 	color: orange;
 	padding-block: 2rem;
 	border-radius: 2rem;
