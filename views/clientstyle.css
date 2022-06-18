@@ -2,23 +2,22 @@ body {
 	text-align: center;
 }
 .schemas {
-	display: grid;
-	padding-inline: 5rem;
+	padding-inline: 2rem;
 }
 .schema {
 	display: grid;
-	grid-template-columns: 15% 85%;
+	grid-template-columns: 10% 85%;
 	background: #5f5f5f;
-	width: 50%;
-	font-size: 1.4rem;
-	padding-inline-start: 4rem;
-	padding-inline-end: 2rem;
+	font-size: 0.8rem;
+	padding-inline-start: 1rem;
+	padding-inline-end: 1rem;
 	color: orange;
 	padding-block: 2rem;
 	border-radius: 2rem;
 	margin: auto;
 	text-align: left;
 	margin-bottom: 2rem;
+	line-height: 1.2rem;
 }
 .column1 {
 	grid-column: 1 / span 2;
