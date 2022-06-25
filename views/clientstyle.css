@@ -6,7 +6,7 @@ body {
 }
 .schema {
 	display: grid;
-	grid-template-columns: 10% 85%;
+	grid-template-columns: 15% 85%;
 	background: #5f5f5f;
 	font-size: 0.8rem;
 	padding-inline-start: 1rem;
