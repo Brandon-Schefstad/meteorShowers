@@ -18,7 +18,7 @@ body {
 	text-align: left;
 	margin-bottom: 2rem;
 	line-height: 1.2rem;
-	max-width: 30%;
+	max-width: 422px;
 }
 .column1 {
 	grid-column: 1 / span 2;
