@@ -3,7 +3,7 @@
 	grid-template-columns: repeat(5, 1fr);
 	gap: 0.25rem;
 	margin-bottom: 5rem;
-	color: white;
+	color: black;
 	font-size: 1.3rem;
 	width: 75%;
 	margin: auto;
@@ -30,7 +30,7 @@ h1 {
 	background-color: blue;
 }
 .shower__info > span:nth-child(2n - 2) {
-	background-color: green;
+	background-color: yellow;
 }
 .input__container {
 	display: grid;

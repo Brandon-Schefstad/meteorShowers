@@ -1,4 +1,4 @@
-const { request } = require('express');
+const { request, response } = require('express');
 const express = require('express');
 require('dotenv').config();
 const app = express();
@@ -39,6 +39,17 @@ app.get('/api', (request, response) => {
 		.then((data) => {
 			response.json(data);
 		});
+});
+
+app.delete('/deleteShower', (request, response) => {
+	console.log(request);
+	db.collection('meteor-showers')
+		.deleteOne({ id: request.body.id })
+		.then((result) => {
+			console.log('Finished');
+			response.json('Shower Deleted');
+		});
+	response.send('done');
 });
 
 app.get('/api/:name', (request, response) => {
