@@ -1,3 +1,5 @@
+const { response } = require('express');
+
 const deleteButton = document.querySelectorAll('.fa-circle-minus');
 
 Array.from(deleteButton).forEach((button) => {
@@ -15,6 +17,8 @@ async function deleteShower() {
 				name,
 			}),
 		});
+		const data = await response.json();
+		console.log(data);
 	} catch {
 		console.error(error);
 	}

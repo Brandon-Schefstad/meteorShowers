@@ -42,6 +42,7 @@ app.get('/api', (request, response) => {
 });
 
 app.delete('/deleteShower', (request, response) => {
+	console.log(`Shower to be deleted: ${request.body.name}`);
 	db.collection('meteor-showers')
 		.deleteOne({ name: request.body.name })
 		.then((result) => {
