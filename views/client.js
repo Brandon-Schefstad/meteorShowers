@@ -1,7 +1,7 @@
 const deleteButton = document.querySelectorAll('.fa-circle-minus');
 
 Array.from(deleteButton).forEach((button) => {
-	button.addEventListener('click', test);
+	button.addEventListener('click', deleteShower);
 });
 async function test() {
 	const name = this.parentNode.childNodes[1].childNodes[0].data;
