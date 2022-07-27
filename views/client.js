@@ -7,15 +7,14 @@ Array.from(deleteButton).forEach((button) => {
 async function deleteShower() {
 	const name = this.parentNode.childNodes[1].childNodes[0].data;
 	console.log(name);
-	console.log(typeof name);
 	try {
-		await fetch('/deleteShower', {
+		const response = await fetch('/deleteShower', {
 			method: 'delete',
 			body: JSON.stringify({
 				name: name,
 			}),
 		});
-		const data = await response;
+		const data = await response.json();
 		console.log(data);
 	} catch (error) {
 		console.error(error);
