@@ -54,13 +54,7 @@ app.delete('/deleteShower', (request, response) => {
 
 app.get('/api/:name', (request, response) => {
 	const showerName = request.params.name.toLowerCase();
-	if (showers[showerName]) {
-		console.log(request.params.name);
-		response.json(showers[showerName]);
-	} else {
-		console.log(`Did Not Work: ${request.params.name}`);
-		response.json(showers['template']);
-	}
+	console.log(showerName);
 });
 app.listen(process.env.PORT || PORT, () => {
 	console.log(`Server running on port ${PORT}`);
