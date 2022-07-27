@@ -12,12 +12,12 @@ async function deleteShower() {
 		await fetch('/deleteShower', {
 			method: 'delete',
 			body: JSON.stringify({
-				name,
+				name: name,
 			}),
 		});
 		const data = await response;
 		console.log(data);
-	} catch {
+	} catch (error) {
 		console.error(error);
 	}
 }
