@@ -8,4 +8,9 @@ async function deleteShower() {
 	const name = this.parentNode.childNodes[1].childNodes[0].data;
 	console.log(name);
 	console.log(typeof name);
+	try {
+		fetch('/');
+	} catch {
+		console.error(error);
+	}
 }
