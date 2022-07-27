@@ -22,3 +22,5 @@ async function deleteShower() {
 		console.log(error);
 	}
 }
+
+console.log('test');
