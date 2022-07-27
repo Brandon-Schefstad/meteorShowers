@@ -4,7 +4,7 @@
 	gap: 0.25rem;
 	margin-bottom: 5rem;
 	color: black;
-	font-size: 1rem;
+
 	width: 75%;
 	margin: auto;
 	margin-bottom: 2rem;
@@ -42,8 +42,8 @@ h1 {
 }
 
 .shower__card {
-	display: grid;
 	border: 2px solid black;
+	font-size: 1rem;
 }
 .span2 {
 	grid-column: 2 / span 2;
