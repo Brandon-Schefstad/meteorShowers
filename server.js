@@ -54,7 +54,6 @@ app.delete('/deleteShower', (request, response) => {
 
 app.get('/api/:name', (request, response) => {
 	const showerName = request.params.name.toLowerCase();
-	console.log(showers[showerName]);
 	if (showers[showerName]) {
 		console.log(request.params.name);
 		response.json(showers[showerName]);
