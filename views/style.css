@@ -13,7 +13,7 @@ h1 {
 	text-align: center;
 }
 .shower_name {
-	font-size: 1.5rem;
+	font-size: 1rem;
 	text-align: center;
 	color: black;
 }
@@ -28,6 +28,7 @@ h1 {
 }
 .shower__info > span:nth-child(2n + 1) {
 	background-color: blue;
+	color: white;
 }
 .shower__info > span:nth-child(2n - 2) {
 	background-color: yellow;
