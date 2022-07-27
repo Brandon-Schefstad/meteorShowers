@@ -54,8 +54,10 @@ app.delete('/deleteShower', (request, response) => {
 
 app.get('/api/:name', (request, response) => {
 	const showerName = request.params.name.toLowerCase();
+	console.log(showerName);
 	db.collection('meteor-showers')
 		.find({ name: showerName })
+		.toArray()
 		.then((data) => {
 			response.json(data);
 		});
