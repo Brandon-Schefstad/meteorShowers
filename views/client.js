@@ -8,8 +8,9 @@ async function deleteShower() {
 	const name = this.parentNode.childNodes[1].childNodes[0].data;
 	console.log(name);
 	try {
-		const response = await fetch('deleteShower', {
+		const request = await fetch('deleteShower', {
 			method: 'delete',
+			headers:{'Content-Type': 'application/json'}
 			body: JSON.stringify({
 				name: name,
 			}),
