@@ -11,6 +11,9 @@ async function deleteShower() {
 	try {
 		await fetch('/deleteShower', {
 			method: 'delete',
+			body: JSON.stringify({
+				name,
+			}),
 		});
 	} catch {
 		console.error(error);
