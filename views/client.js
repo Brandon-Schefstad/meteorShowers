@@ -10,7 +10,7 @@ async function deleteShower() {
 	console.log(typeof name);
 	try {
 		await fetch('/deleteShower', {
-			method: delete,
+			method: 'delete',
 		});
 	} catch {
 		console.error(error);
