@@ -18,10 +18,10 @@ async function deleteShower() {
 				name: name,
 			}),
 		});
-		console.log(request);
-		const data = await request.json();
-		console.log(data);
-		location.reload();
+		// console.log(request);
+		// const data = await request.json();
+		// console.log(data);
+		// location.reload();
 	} catch (error) {
 		console.log(error);
 	}

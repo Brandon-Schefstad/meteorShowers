@@ -50,6 +50,7 @@ app.delete('/deleteShower', (request, response) => {
 			response.json('Shower Deleted');
 		});
 	response.send('done');
+	response.redirect('/dev');
 });
 
 app.get('/api/:name', (request, response) => {
