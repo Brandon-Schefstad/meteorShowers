@@ -9,7 +9,7 @@ async function deleteShower() {
 	console.log(name);
 	console.log(typeof name);
 	try {
-		fetch('/');
+		fetch('/deleteShower');
 	} catch {
 		console.error(error);
 	}
