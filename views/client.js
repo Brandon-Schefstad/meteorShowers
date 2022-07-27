@@ -10,7 +10,7 @@ async function deleteShower() {
 	try {
 		const request = await fetch('deleteShower', {
 			method: 'delete',
-			headers:{'Content-Type': 'application/json'}
+			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({
 				name: name,
 			}),
