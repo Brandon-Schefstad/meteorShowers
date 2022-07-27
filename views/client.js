@@ -5,6 +5,6 @@ Array.from(deleteButton).forEach((button) => {
 });
 
 async function deleteShower() {
-	const name = this.parentNode.childNodes[1].childNodes[0].data;
+	const name = this.parentNode.childNodes[1].childNodes[0].innerText;
 	console.log(name);
 }

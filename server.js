@@ -42,14 +42,13 @@ app.get('/api', (request, response) => {
 });
 
 app.delete('/deleteShower', (request, response) => {
-	console.log(request.body.name);
 	db.collection('meteor-showers')
 		.deleteOne({ name: request.body.name })
 		.then((result) => {
 			console.log('Finished');
 			response.json('Shower Deleted');
-		});
-	response.redirect('/dev');
+		})
+		.catch((error) => console.error(error));
 });
 
 app.get('/api/:name', (request, response) => {
