@@ -49,7 +49,6 @@ app.delete('/deleteShower', (request, response) => {
 			console.log('Finished');
 			response.json('Shower Deleted');
 		});
-	response.send('done');
 	response.redirect('/dev');
 });
 
