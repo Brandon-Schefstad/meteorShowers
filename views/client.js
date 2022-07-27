@@ -15,8 +15,7 @@ async function deleteShower() {
 				name: name,
 			}),
 		});
-		const data = await response.json();
-		console.log(data);
+		location.reload();
 	} catch (error) {
 		console.error(error);
 	}
