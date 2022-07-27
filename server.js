@@ -42,7 +42,7 @@ app.get('/api', (request, response) => {
 });
 
 app.delete('/deleteShower', (request, response) => {
-	console.log(request);
+	console.log(request.body.name);
 	db.collection('meteor-showers')
 		.deleteOne({ name: request.body.name })
 		.then((result) => {

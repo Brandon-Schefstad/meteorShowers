@@ -13,10 +13,9 @@ async function deleteShower() {
 	try {
 		const response = await fetch('/deleteShower', {
 			method: 'delete',
-			// headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({
-				name: name,
-			}),
+			// body: JSON.stringify({
+			// 	name: name,
+			// }),
 		});
 		// console.log(request);
 		// const data = await request.json();
