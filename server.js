@@ -44,7 +44,7 @@ app.get('/api', (request, response) => {
 app.delete('/deleteShower', (request, response) => {
 	console.log(request);
 	db.collection('meteor-showers')
-		.deleteOne({ id: request.body.id })
+		.deleteOne({ name: request.body.name })
 		.then((result) => {
 			console.log('Finished');
 			response.json('Shower Deleted');

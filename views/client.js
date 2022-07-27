@@ -5,18 +5,20 @@ Array.from(deleteButton).forEach((button) => {
 });
 
 async function deleteShower() {
-	console.log(this.parentNode.childNodes[1].childNodes[0].data);
+	const name = this.parentNode.childNodes[1].childNodes[0].data;
+	console.log(name);
+	try {
+		const response = await fetch('deleteShower', {
+			method: 'delete',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({
+				name: name,
+			}),
+		});
+		const data = await response.json();
+		console.log(data);
+		location.reload();
+	} catch (error) {
+		console.log(error);
+	}
 }
-
-// 	try {
-// 		const response = await fetch('deleteShower', {
-//       method: 'delete',
-//       headers: {'Content-Type':'application/json'},
-//       body:JSON.stringify({
-
-//       })
-//     });
-// 	} catch (error) {
-// 		console.log(error);
-// 	}
-// }
