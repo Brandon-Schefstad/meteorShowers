@@ -62,7 +62,7 @@ app.get('/api/:name', (request, response) => {
 			response.json(data);
 		});
 });
-app.get('/api/startMonth/:startMonthInt', (request, response) => {
+app.get('/api/:startMonthInt', (request, response) => {
 	const startMonthInt = request.params.startMonthInt;
 	console.log(startMonthInt);
 	db.collection('meteor-showers')
