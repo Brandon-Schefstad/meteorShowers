@@ -62,11 +62,11 @@ app.get('/api/:name', (request, response) => {
 			response.json(data);
 		});
 });
-app.get('/api/:startMonthInt', (request, response) => {
-	const startMonthInt = request.params.startMonthInt;
-	console.log(startMonthInt);
+app.get('/api/:rating', (request, response) => {
+	const rating = request.params.rating;
+	console.log(rating);
 	db.collection('meteor-showers')
-		.find({ startMonthInt: startMonthInt })
+		.find({ rating: rating })
 		.toArray()
 		.then((data) => {
 			response.json(data);
