@@ -61,6 +61,15 @@ app.get('/api/:name', (request, response) => {
 			response.json(data);
 		});
 });
+app.get('/api/startMonth/:startMonth', (request, response) => {
+	const startMonth = request.params.startMonth;
+	db.collection('meteor-showers')
+		.find({ startMonthInt: startMonth })
+		.toArray()
+		.then((data) => {
+			response.json(data);
+		});
+});
 app.listen(process.env.PORT || PORT, () => {
 	console.log(`Server running on port ${PORT}`);
 });
