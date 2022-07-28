@@ -54,6 +54,7 @@ app.delete('/deleteShower', (request, response) => {
 
 app.get('/api/:name', (request, response) => {
 	const showerName = request.params.name;
+	console.log(showerName);
 	db.collection('meteor-showers')
 		.find({ name: showerName })
 		.toArray()
@@ -63,6 +64,7 @@ app.get('/api/:name', (request, response) => {
 });
 app.get('/api/startMonth/:startMonthInt', (request, response) => {
 	const startMonthInt = request.params.startMonthInt;
+	console.log(startMonthInt);
 	db.collection('meteor-showers')
 		.find({ startMonthInt: startMonthInt })
 		.toArray()
