@@ -61,10 +61,10 @@ app.get('/api/:name', (request, response) => {
 			response.json(data);
 		});
 });
-app.get('/api/startMonth/:startMonth', (request, response) => {
-	const startMonth = request.params.startMonth;
+app.get('/api/startMonth/:startMonthInt', (request, response) => {
+	const startMonthInt = request.params.startMonthInt;
 	db.collection('meteor-showers')
-		.find({ startMonthInt: startMonth })
+		.find({ startMonthInt: startMonthInt })
 		.toArray()
 		.then((data) => {
 			response.json(data);
