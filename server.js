@@ -66,7 +66,7 @@ app.get('/api/:rating', (request, response) => {
 	const rating = request.params.rating;
 	console.log(rating);
 	db.collection('meteor-showers')
-		.find({ rating: rating })
+		.findAll({ rating: rating })
 		.toArray()
 		.then((data) => {
 			response.json(data);
